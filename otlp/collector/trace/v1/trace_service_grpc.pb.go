@@ -11,7 +11,7 @@ import (
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion7
+const _ = grpc.SupportPackageIsVersion5
 
 // TraceServiceClient is the client API for TraceService service.
 //
@@ -23,10 +23,10 @@ type TraceServiceClient interface {
 }
 
 type traceServiceClient struct {
-	cc grpc.ClientConnInterface
+	cc ClientConnInterface
 }
 
-func NewTraceServiceClient(cc grpc.ClientConnInterface) TraceServiceClient {
+func NewTraceServiceClient(cc ClientConnInterface) TraceServiceClient {
 	return &traceServiceClient{cc}
 }
 
@@ -65,7 +65,7 @@ type UnsafeTraceServiceServer interface {
 	mustEmbedUnimplementedTraceServiceServer()
 }
 
-func RegisterTraceServiceServer(s grpc.ServiceRegistrar, srv TraceServiceServer) {
+func RegisterTraceServiceServer(s ServiceRegistrar, srv TraceServiceServer) {
 	s.RegisterService(&_TraceService_serviceDesc, srv)
 }
 
